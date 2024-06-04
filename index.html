@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Fetch Data</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider" />
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2 search-text"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success search-btn" type="button">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <section id="main" class="container">
+      <div id="app"></div>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="justify-content-between d-flex">
+                <div>
+                  <h1
+                  class="modal-title fs-3 movie-title mb-2  d-inline-block"
+                  id="exampleModalLabel"
+                  >
+                </h1>
+                <h1 class="modal-title fs-3 mb-2 d-inline-block">(<span class="year"></span>)</h1>
+                </div>
+                <div>
+                  <p class="text-uppercase m-0 text-center" style="font-size: 14px; letter-spacing: 4px;">rating</p>
+                  <div class="d-flex text-warning align-items-center">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 36px; height: 36px;" class="me-1">
+                        <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                      </svg>
+                      <div class="d-inline-flex flex-column">
+                        <p class="text-black m-0" style="font-size: 16px; line-height: 1.5rem; letter-spacing: 1px;"><span class="rating opacity-100" style="font-size: 20px; font-weight: 500;"></span><span class="opacity-50">/10</span></p>
+                        <p class="voteCount text-black m-0 opacity-50" style="font-size: 12px;"></p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <img
+                    src="..."
+                    class="img-thumbnail poster"
+                    alt="..."
+                    style="max-width: 200px"
+                  />
+                </div>
+                <div class="col-md-9 px-4">
+                  <p
+                    class="overview"
+                    style="font-size: 14px; text-align: justify"
+                  ></p>
+                  <div class="genre d-flex"></div>
+                  <div class="d-flex">
+                    <p class="me-3" style="font-size: 14px; font-weight: 600">
+                      Director
+                    </p>
+                    <p class="director" style="font-size: 14px"></p>
+                  </div>
+                  <div class="d-flex">
+                    <p class="me-3" style="font-size: 14px; font-weight: 600">
+                      Writer
+                    </p>
+                    <p class="writer" style="font-size: 14px"></p>
+                  </div>
+                  <div class="d-flex">
+                    <p class="me-3" style="font-size: 14px; font-weight: 600">
+                      Duration
+                    </p>
+                    <p class="runtime" style="font-size: 14px"></p>
+                  </div>
+                  <div class="d-flex">
+                    <p class="me-3" style="font-size: 14px; font-weight: 600">
+                      Status
+                    </p>
+                    <p class="status" style="font-size: 14px"></p>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
